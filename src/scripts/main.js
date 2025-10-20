@@ -5,8 +5,8 @@ const mainPicture = document.querySelector('#largeImg');
 const ul = document.querySelector('#thumbs');
 
 if (ul) {
-    ul.addEventListener('click', (evnt) => {
-    const thumbnail = evnt.target.closest('.list-item__link');
+  ul.addEventListener('click', (evnt) => {
+    const thumbnail = evnt.target.closest('a');
 
     if (!thumbnail) {
       return;
