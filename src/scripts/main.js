@@ -4,13 +4,18 @@ const mainPicture = document.querySelector('#largeImg');
 
 const ul = document.querySelector('#thumbs');
 
-ul.addEventListener('click', (event) => {
-  const thumbnail = event.target.closest('.list-item__link');
+if (ul) {
+    ul.addEventListener('click', (evnt) => {
+    const thumbnail = evnt.target.closest('.list-item__link');
 
-  if (!thumbnail) return;
+    if (!thumbnail) {
+      return;
+    }
 
-  event.preventDefault();
+    evnt.preventDefault();
 
-  mainPicture.src = thumbnail.href; // ==> (.getAttribute('href'))
-});
-
+    if (mainPicture) {
+      mainPicture.src = thumbnail.getAttribute('href');
+    }
+  });
+}
